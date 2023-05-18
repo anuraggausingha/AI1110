@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\title{\Huge\centering Software Assignment}
+\author{ANURAG}
+\date{BT22BTECH11002}
+
+\begin{document}
+\maketitle
+
+\section*{Report for Software Assignment}
+
+The provided code is a Python script that involves creating a playlist of audio files from a specified folder and playing the playlist using the Pygame library.
+
+\textbf{Importing Required Libraries:}
+
+\begin{itemize}
+    \item \texttt{import os} is used for file and directory operations.
+    \item \texttt{import random} is used for shuffling the list of audio files.
+    \item \texttt{import pygame} is used for audio playback functionality.
+\end{itemize}
+
+\textbf{Function: \texttt{create\_playlist(folder\_path)}}
+
+This function takes a folder path as a parameter. It retrieves a list of audio files from the specified folder using \texttt{os.listdir(folder\_path)}. The list of audio files is then shuffled randomly using \texttt{random.shuffle(audio\_files)}. It iterates over each audio file and calls the \texttt{play\_playlist(file\_path)} function to play the file. Finally, it returns the playlist file.
+
+\textbf{Function: \texttt{play\_playlist(playlist\_file)}}
+
+This function takes a playlist file as a parameter. It initializes the Pygame mixer module using \texttt{pygame.mixer.init()}. The playlist file is loaded using \texttt{pygame.mixer.music.load(playlist\_file)}. The playback of the playlist is started using \texttt{pygame.mixer.music.play()}. It waits for the playlist to finish playing using a while loop with \texttt{pygame.mixer.music.get\_busy()} condition.
+
+\textbf{Usage Example:}
+
+The script provides an example usage at the end. It sets the \texttt{folder\_path} variable to the path of a folder containing audio files. The \texttt{shuffle\_option} variable is set to \texttt{True} for shuffling the playlist. The \texttt{create\_playlist()} function is called, which creates and returns the playlist file. Finally, the \texttt{play\_playlist()} function is called to play the generated playlist file.
+
+\end{document}
